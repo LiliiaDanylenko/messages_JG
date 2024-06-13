@@ -65,7 +65,7 @@
     /* Style the tab content */
     .tabcontent {
       display: none;
-      padding: 6px 12px;
+      padding: 50px 12px;
     }
   </style>
 </head>
@@ -102,7 +102,6 @@
   </div>
 
   <div id="1" class="tabcontent">
-    <br /><br />
     <h3>FIRST MESSAGES:</h3>
     <div class="block">
       Hi! I represent an outstaffing company Remote Helpers. We provide our clients all over the world with remote
@@ -128,7 +127,6 @@
   </div>
 
   <div id="2" class="tabcontent">
-    <br /><br />
     <h3>SECOND MESSAGES:</h3>
     <div class="block">
       Thanks for adding me! Candidates we provide are working mainly in 4 fields: lead generation, marketing, design,
@@ -182,7 +180,6 @@
   </div>
 
   <div id="3" class="tabcontent">
-    <br /><br />
     <h3>THIRD MESSAGES:</h3>
     <div class="block">
       Hi! Have you thought about our offer? Мaybe you have time this or next week to discuss possible cooperation and to
@@ -216,7 +213,6 @@
   </div>
 
   <div id="4" class="tabcontent">
-    <br /><br />
     <h3>FOURTH MESSAGES:</h3>
     <div class="block">
       Hi! Any chance we can still talk for a few minutes? Thanks
@@ -237,7 +233,6 @@
   </div>
 
   <div id="5" class="tabcontent">
-    <br /><br />
     <h3>FIRST SHORT MESSAGES:</h3>
     <div class="block">
       Remote staff: available candidates in different areas with video CV. Ready to view?
@@ -327,7 +322,6 @@
   </div>
 
   <div id="6" class="tabcontent">
-    <br /><br />
     <h3>IF NOT INTERESTED FOR NOW:</h3>
     <div class="block">
       Thank you for the reply.
@@ -368,7 +362,6 @@
   </div>
 
   <div id="7" class="tabcontent">
-    <br /><br />
     <h3>INTERESTED:</h3>
     <div class="block">
       I suggest going out for a short call where we can discuss your needs and we can tell you more about the services
@@ -385,7 +378,6 @@
   </div>
 
   <div id="8" class="tabcontent">
-    <br /><br />
     <h3>AFFILIATE:</h3>
     <div class="block">
       https://rh-s.com/affiliate
@@ -407,7 +399,6 @@
   </div>
 
   <div id="9" class="tabcontent">
-    <br /><br />
     <h3>FOR OLD CONNECTIONS:</h3>
     <div class="block">
       Hi.
@@ -490,6 +481,19 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+
+    function adjustContentPadding() {
+      const header = document.querySelector('.tab');
+      const content = document.querySelectorAll('.tabcontent');
+      const headerHeight = header.offsetHeight;
+      for (const ch of content) {
+        ch.style.paddingTop = `${headerHeight}px`;
+      }
+    }
+
+    window.addEventListener('resize', adjustContentPadding);
+
+    adjustContentPadding(); 
   </script>
 </body>
 
